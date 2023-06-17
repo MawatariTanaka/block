@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Math&display=swap');
+
+* {
+    background-color: black;
+    color: white;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-user-select: none; /* Chrome, Safari, Opera */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Standard syntax */
+}
+
+html {
+    font-family: 'Noto Sans Math', sans-serif;
+    font-size: 24px;
+}
+
+header {
+    width: 100%;
+    padding: 0 1rem;
+    border-bottom: 5px solid white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-size: 2.5gamerem;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+.home {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.home-btn-container {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-nav {
+    width: 100%;
+    padding: 1rem;
+    border: 3px solid white;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    text-align: center;
+    text-decoration: none;
+}
+
+.level-container {
+    width: 100%;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2rem;
+}
+
+.level {
+    padding: 0.5rem;
+    border: 4px solid white;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.game {
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.game-grid {
+    width: fit-content;
+    height: fit-content;
+    margin: 0 auto;
+    border: 5px solid white;
+    position: relative;
+    display: grid;
+    gap: 0;
+}
+
+.game-target-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.game-cell {
+    background: transparent;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+.game-cell-animation {
+    animation: cell-appear 1s ease-in-out;
+}
+
+@keyframes cell-appear {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.piece-control {
+    height: fit-content;
+    margin: auto auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 5px;
+}
+
+.game-menu-container {
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.1rem;
+}
+
+.game-menu-btn {
+    width: 100%;
+    height: fit-content;
+    padding: 1rem;
+    border: 3px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+@keyframes congratulation-appear {
+    from {
+        transform: scaleY(0);
+        opacity: 0;
+    }
+    to {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+}
+
+.congratulation {
+    grid-column: 1 / span 2;
+    font-size: 1.5rem;
+    opacity: 0;
+    animation: congratulation-appear 0.5s ease-in-out forwards; /* add animation */
+}
