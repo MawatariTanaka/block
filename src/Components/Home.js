@@ -1,25 +1,29 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
-import { addNewLevel } from '../backend/levelModifier';
+import { addNewLevel } from "../backend/levelModifier";
 
 export default function Home() {
     const navigate = useNavigate();
 
     const handleSelectLevel = () => {
-        navigate('/level');
+        navigate("/level");
     };
 
     const handleAdd = () => {
         const initGrid = [
-            [1, 1, 3],
-            [1, 2, 0],
-            [4, 0, 0],
+            [2, 1, 1, 0],
+            [3, 1, 1, 0],
+            [4, 5, 6, 7],
+            [8, 8, 9, 9],
+            [10, 11, 12, 12],
         ];
         const targetGrid = [
-            [0, 0, 0],
-            [0, 1, 1],
-            [0, 1, 0],
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+            [0, 1, 1, 0],
+            [0, 1, 1, 0],
         ];
         addNewLevel(initGrid, targetGrid, 4);
     };
@@ -31,9 +35,9 @@ export default function Home() {
                 <button className="home-nav" onClick={handleSelectLevel}>
                     Select Level
                 </button>
-                <button className="home-nav" onClick={handleAdd}>
+                {/* <button className="home-nav" onClick={handleAdd}>
                     Add
-                </button>
+                </button> */}
             </div>
         </main>
     );
